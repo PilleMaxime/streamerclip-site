@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamerClip — Terms of Service</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #F4F6F2; --paper-alt: #E8ECE3; --ink: #17231F; --muted: #56675C; --border: #D6DDCF;
+    --accent: #C97A22; --accent-strong: #8F5416;
+    --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0E1512; --paper-alt: #161E19; --ink: #E7ECE5;
+      --muted: #93A199; --border: #263029; --accent: #EFA23F; --accent-strong: #F6BE72;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0E1512; --paper-alt: #161E19; --ink: #E7ECE5;
+    --muted: #93A199; --border: #263029; --accent: #EFA23F; --accent-strong: #F6BE72;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); margin: 0; font-family: var(--font-display); font-optical-sizing: auto; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 720px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 2rem) 5rem; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: clamp(2rem, 6vw, 3.5rem); border-bottom: 1px solid var(--border); margin-bottom: clamp(2rem, 6vw, 3.5rem); }
+  .wordmark { font-family: var(--font-mono); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.02em; display: flex; align-items: center; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; margin-right: 0.6em; animation: pulse 2.6s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { .dot { animation: none; } }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .doc-switch { display: flex; gap: 1.25rem; }
+  .doc-switch a { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 0.1em; }
+  .doc-switch a:hover, .doc-switch a:focus-visible { color: var(--accent-strong); border-color: var(--accent); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-strong); margin: 0 0 0.9rem; }
+  h1 { font-size: clamp(2.1rem, 5vw, 2.75rem); font-weight: 600; line-height: 1.08; margin: 0 0 0.6rem; text-wrap: balance; }
+  .meta { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); margin: 0 0 clamp(2.5rem, 6vw, 3.5rem); }
+  section { margin-bottom: clamp(2rem, 5vw, 2.75rem); }
+  h2 { font-size: 1.28rem; font-weight: 600; margin: 0 0 0.75rem; text-wrap: balance; }
+  p { font-size: 1.05rem; line-height: 1.65; max-width: 62ch; margin: 0 0 1rem; color: var(--ink); }
+  p:last-child { margin-bottom: 0; }
+  .path { font-family: var(--font-mono); font-size: 0.92em; background: var(--paper-alt); border: 1px solid var(--border); border-radius: 4px; padding: 0.05em 0.4em; }
+  .doc-footer { margin-top: clamp(3rem, 7vw, 4rem); padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); }
+  .doc-footer a { color: var(--accent-strong); }
+  a { color: var(--accent-strong); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <div class="wordmark"><span class="dot" aria-hidden="true"></span>StreamerClip</div>
+    <nav class="doc-switch"><a href="index.html">Home</a><a href="privacy.html">Privacy →</a></nav>
+  </header>
+
+  <main class="doc">
+    <p class="eyebrow">Legal · Terms</p>
+    <h1>Terms of Service</h1>
+    <p class="meta">Last updated 26 August 2026</p>
+
+    <section>
+      <h2>What StreamerClip is</h2>
+      <p>StreamerClip is an automation tool that watches Twitch livestreams, detects highlight moments from chat activity, and prepares short vertical clips for TikTok. It is operated for use with TikTok accounts the operator owns or is authorized to manage — it is not offered as a public sign-up service.</p>
+    </section>
+
+    <section>
+      <h2>Connecting a TikTok account</h2>
+      <p>By connecting a TikTok account through TikTok Login Kit, you confirm that you own that account, or that its owner has authorized you to manage its content on their behalf. Each clip is reviewed and approved individually by the account owner before it reaches TikTok — nothing is posted automatically without that review.</p>
+    </section>
+
+    <section>
+      <h2>Acceptable use</h2>
+      <p>StreamerClip may only be used to publish content the account owner has the rights to share, and in line with TikTok's own Community Guidelines and Terms of Service. Access may be withdrawn at any time if a connected account is used in a way that violates either.</p>
+    </section>
+
+    <section>
+      <h2>No warranty</h2>
+      <p>StreamerClip is provided as-is, with no guarantee of uninterrupted availability. The operator is not liable for indirect or consequential loss arising from its use, including delays or failures in the publishing pipeline.</p>
+    </section>
+
+    <section>
+      <h2>Changes to these terms</h2>
+      <p>These terms may be updated from time to time; the date above reflects the latest revision. Continued use of StreamerClip after a change constitutes acceptance of the update.</p>
+    </section>
+
+    <section>
+      <h2>Revoking access</h2>
+      <p>A connected account can be disconnected at any time from TikTok's own settings — <span class="path">Settings → Manage account → Apps and websites → StreamerClip</span>. This immediately revokes StreamerClip's access to that account.</p>
+    </section>
+  </main>
+
+  <footer class="doc-footer">
+    <span>See also: <a href="privacy.html">Privacy Policy</a></span>
+    <span>Contact: <a href="mailto:streamerclip62@gmail.com">streamerclip62@gmail.com</a></span>
+  </footer>
+</div>
+</body>
+</html>

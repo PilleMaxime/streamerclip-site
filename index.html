@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamerClip</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #F4F6F2;
+    --paper-alt: #E8ECE3;
+    --ink: #17231F;
+    --muted: #56675C;
+    --border: #D6DDCF;
+    --accent: #C97A22;
+    --accent-strong: #8F5416;
+    --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0E1512; --paper-alt: #161E19; --ink: #E7ECE5;
+      --muted: #93A199; --border: #263029; --accent: #EFA23F; --accent-strong: #F6BE72;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0E1512; --paper-alt: #161E19; --ink: #E7ECE5;
+    --muted: #93A199; --border: #263029; --accent: #EFA23F; --accent-strong: #F6BE72;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink); margin: 0;
+    font-family: var(--font-display); font-optical-sizing: auto; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 2rem) 5rem; }
+  .masthead {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding-bottom: clamp(2rem, 6vw, 3.5rem); border-bottom: 1px solid var(--border);
+    margin-bottom: clamp(2.5rem, 7vw, 4rem);
+  }
+  .wordmark { font-family: var(--font-mono); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.02em; display: flex; align-items: center; }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block;
+    margin-right: 0.6em; animation: pulse 2.6s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) { .dot { animation: none; } }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .doc-switch { display: flex; gap: 1.25rem; }
+  .doc-switch a {
+    font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); text-decoration: none;
+    border-bottom: 1px solid var(--border); padding-bottom: 0.1em;
+  }
+  .doc-switch a:hover, .doc-switch a:focus-visible { color: var(--accent-strong); border-color: var(--accent); }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent-strong); margin: 0 0 0.9rem;
+  }
+  h1 { font-size: clamp(2.3rem, 6vw, 3.1rem); font-weight: 600; line-height: 1.06; margin: 0 0 1rem; text-wrap: balance; }
+  .lede { font-size: 1.2rem; line-height: 1.55; max-width: 46ch; color: var(--muted); margin: 0 0 clamp(2.5rem, 6vw, 3.5rem); }
+  section { margin-bottom: clamp(2rem, 5vw, 2.75rem); }
+  h2 { font-size: 1.28rem; font-weight: 600; margin: 0 0 0.75rem; text-wrap: balance; }
+  p { font-size: 1.05rem; line-height: 1.65; max-width: 62ch; margin: 0 0 1rem; color: var(--ink); }
+  p:last-child { margin-bottom: 0; }
+  .steps { list-style: none; margin: 0; padding: 0; max-width: 62ch; }
+  .steps li {
+    display: flex; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--border);
+  }
+  .steps li:last-child { padding-bottom: 0; }
+  .step-num { font-family: var(--font-mono); color: var(--accent-strong); font-size: 0.95rem; flex-shrink: 0; padding-top: 0.15rem; }
+  .step-body p { margin: 0; }
+  .step-body strong { display: block; font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.15rem; color: var(--ink); }
+  .doc-footer {
+    margin-top: clamp(3rem, 7vw, 4rem); padding-top: 1.5rem; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted);
+  }
+  .doc-footer a { color: var(--accent-strong); }
+  a { color: var(--accent-strong); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <div class="wordmark"><span class="dot" aria-hidden="true"></span>StreamerClip</div>
+    <nav class="doc-switch">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">Twitch → TikTok</p>
+    <h1>Highlight clips, without the editing.</h1>
+    <p class="lede">StreamerClip watches a Twitch chat while it's live, catches the moments that actually landed, and turns them into short vertical clips ready for TikTok.</p>
+
+    <section>
+      <h2>What it does</h2>
+      <p>StreamerClip runs continuously against the operator's own Twitch channels. When chat activity spikes around a keyword, an emote, or a sudden burst of messages, it cuts a short vertical clip around that moment, crops the webcam and gameplay automatically, and adds karaoke-style captions.</p>
+    </section>
+
+    <section>
+      <h2>How publishing works</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">01</span>
+          <div class="step-body"><strong>Review</strong><p>Every clip is previewed by the operator before it goes anywhere — nothing is posted sight unseen.</p></div>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <div class="step-body"><strong>Connect</strong><p>A TikTok account is connected once via TikTok Login Kit, showing the operator exactly which account and which privacy options are available.</p></div>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <div class="step-body"><strong>Publish</strong><p>An approved clip is uploaded to that account's TikTok inbox as a draft, for the operator to finalize from the TikTok app.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Who runs it</h2>
+      <p>StreamerClip is operated for use with TikTok accounts the operator owns or is authorized to manage. It isn't a public sign-up product — see the Terms of Service for details.</p>
+    </section>
+  </main>
+
+  <footer class="doc-footer">
+    <span><a href="terms.html">Terms of Service</a></span>
+    <span><a href="privacy.html">Privacy Policy</a></span>
+    <span>Contact: <a href="mailto:streamerclip62@gmail.com">streamerclip62@gmail.com</a></span>
+  </footer>
+</div>
+</body>
+</html>
